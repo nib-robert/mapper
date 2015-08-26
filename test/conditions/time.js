@@ -14,12 +14,12 @@ describe('Conditions', function() {
 
       it('should return true', function() {
         var cond = time.before(sevenPmOffset);
-        assert(cond({now: new Date(nowyr, 7, 26, 3, 30, 0)}));
+        assert(cond(new Date(nowyr, 7, 26, 3, 30, 0)));
       });
 
       it('should return false', function() {
         var cond = time.before(sevenPmOffset);
-        assert(!cond({now: new Date(nowyr, 7, 26, 21, 30, 0)}));
+        assert(!cond(new Date(nowyr, 7, 26, 21, 30, 0)));
       });
 
     });
@@ -28,12 +28,12 @@ describe('Conditions', function() {
 
       it('should return true', function() {
         var cond = time.after(sevenPmOffset);
-        assert(cond({now: new Date(nowyr, 7, 26, 21, 30, 0)}));
+        assert(cond(new Date(nowyr, 7, 26, 21, 30, 0)));
       });
 
       it('should return false', function() {
         var cond = time.after(sevenPmOffset);
-        assert(!cond({now: new Date(nowyr, 7, 26, 4, 30, 0)}));
+        assert(!cond(new Date(nowyr, 7, 26, 4, 30, 0)));
       });
 
     });

@@ -1,5 +1,6 @@
 var mapper  = require('..');
-var cond    = mapper.conditions;
+var ctx     = mapper.context;
+var cond    = mapper.condition;
 
 var
   sevenPmOffset = 19*60*60,
@@ -8,9 +9,9 @@ var
 
 var m = mapper()
   .rule(0, 'control', cond.control(25))
-  .rule(1, 'edm',     cond.url('/?what-fitzy-said'))
-  .rule(2, 'fb',      cond.or(cond.url('/?facebook'), cond.bucket('fb')))
-  .rule(3, 'afl',     cond.and(cond.location.state('vic'), cond.time(sevenPmOffset, ninePmOffset)))
+  .rule(1, 'edm',     ctx.prop('url', cond.equals('/?what-fitzy-said')))
+  .rule(2, 'fb',      cond.or(ctx.prop('url', cond.equals('/?facebook')), ctx.prop('bucket', cond.equals('fb'))))
+  .rule(3, 'afl',     cond.and(ctx.prop('state', cond.equals('vic')), ctx.prop('now', cond.time(sevenPmOffset, ninePmOffset))))
   .rule(9, 'offer',   cond.true())
 ;
 

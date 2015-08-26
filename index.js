@@ -1,6 +1,6 @@
-var Mapper      = require('./lib/mapper');
-var conditions  = require('./lib/conditions');
+var Mapper        = require('./lib/mapper');
 
-Mapper.conditions = conditions;
+Mapper.context    = require('./lib/context');
+Mapper.condition  = require('./lib/conditions');
 
 module.exports = Mapper;
