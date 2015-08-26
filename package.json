@@ -1,0 +1,6 @@
+{
+  "name": "variant-mapper",
+  "scripts": {
+    "test": "mocha --recursive"
+  }
+}
