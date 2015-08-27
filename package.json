@@ -1,5 +1,5 @@
 {
-  "name": "variant-mapper",
+  "name": "@nib-robert/mapper",
   "scripts": {
     "test": "mocha --recursive"
   }
