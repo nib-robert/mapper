@@ -8,10 +8,10 @@ var
 ;
 
 var m = mapper()
-  .rule(0, 'control', cond.control(25))
-  .rule(1, 'edm',     ctx.prop('url', cond.equals('/?what-fitzy-said')))
-  .rule(2, 'fb',      cond.or(ctx.prop('url', cond.equals('/?facebook')), ctx.prop('bucket', cond.equals('fb'))))
-  .rule(3, 'afl',     cond.and(ctx.prop('state', cond.equals('vic')), ctx.prop('now', cond.time(sevenPmOffset, ninePmOffset))))
+  .rule(0, 'offer',   cond.rand(25))
+  .rule(1, 'edm',     ctx.prop('url', cond.equal('/?what-fitzy-said')))
+  .rule(2, 'fb',      cond.or(ctx.prop('url', cond.equal('/?facebook')), ctx.prop('bucket', cond.equal('fb'))))
+  .rule(3, 'afl',     cond.and(ctx.prop('state', cond.equal('vic')), ctx.prop('now', cond.time(sevenPmOffset, ninePmOffset))))
   .rule(9, 'offer',   cond.true())
 ;
 
